@@ -2,12 +2,14 @@
 Scripts used to format files for analysis - Affymetrix SNP data to structure and genepop formats. Also, clunky loop scripts to generate replicates of datasets.
 
 General workflow for removing SNPs in LD:
+
 #make .ped and .map files from .str file in PGDspider
 #run in terminal
 $ plink --file filename --r2 inter-chr --ld-window-r2 0
 $ mv plink.ld filename_plink.ld
 $ tr -s ' ' <filename_plink.ld | tr ' ' ',' > filename.plink.ld.csv
 $ awk -F "," '{$1=""; print $0}' <filename.plink.ld.csv >filename.R2.csv
+
 #in R
 R
 setwd("/path")
@@ -17,6 +19,7 @@ padj <- p.adjust(r2$R2, method = "fdr", n = length(r2$R2))
 r2$r2p.adj <- padj
 write.table(r2, "filename.R2adj.txt")
 quit()
+
 #in terminal
 $ grep '0\.8*' filename.R2adj.txt > filename.R2adj_InLD.txt
 $ awk '{print $8}' <filename.R2adj_InLD.txt >filename.R2adj_InLDlist.txt
