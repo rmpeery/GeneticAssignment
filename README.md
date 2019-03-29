@@ -1,5 +1,5 @@
 # GeneticAssignment
-Scripts used to format files for analysis - Affymetrix SNP data to structure and genepop formats. Also, clunky loop scripts to generate replicates of datasets.
+Scripts used to format files for analysis - Affymetrix SNP data to structure and genepop formats. Including clunky loop scripts to generate replicates of datasets.
 
 General workflow for removing SNPs in LD:
 
