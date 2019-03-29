@@ -4,10 +4,15 @@ Scripts used to format files for analysis - Affymetrix SNP data to structure and
 General workflow for removing SNPs in LD:
 
 #make .ped and .map files from .str file in PGDspider
+
 #run in terminal
+
 $ plink --file filename --r2 inter-chr --ld-window-r2 0
+
 $ mv plink.ld filename_plink.ld
+
 $ tr -s ' ' <filename_plink.ld | tr ' ' ',' > filename.plink.ld.csv
+
 $ awk -F "," '{$1=""; print $0}' <filename.plink.ld.csv >filename.R2.csv
 
 #in R
