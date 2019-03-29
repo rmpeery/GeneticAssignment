@@ -43,6 +43,7 @@ Workflow for making files:
   $ head -n 101 subsetsRandomizedLists.txt > 100LociRandomizedList.txt
   
   $ awk '{print $1}' 100LociRandomizedList.txt > subset1_100lociList.list
+    
 2. loopSepSNPfiles_mac.pl
 3. loop_addHeader.pl
 4. loop_transpose.pl
@@ -54,6 +55,7 @@ Workflow for making files:
 11. Then pulled the lines needed for creating averages:
   Example:
   $ awk -F";" '{ print $2 "\t" $3 }' subset1_3415loci.csv > subset1_3415loci.tsv
+  
 12. Find and replace in BBedit
   Find: M052_(\S+)_(d+)_.+
   Replace: \1\2
