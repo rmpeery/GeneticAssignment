@@ -13,10 +13,10 @@ R
 setwd("/path")
 r2 <- read.csv("filename.R2.csv", header = T, sep = " ")
 #adds the adjusted p values to the table r2
-> padj <- p.adjust(r2$R2, method = "fdr", n = length(r2$R2))
-> r2$r2p.adj <- padj
-> write.table(r2, "filename.R2adj.txt")
-> quit()
+padj <- p.adjust(r2$R2, method = "fdr", n = length(r2$R2))
+r2$r2p.adj <- padj
+write.table(r2, "filename.R2adj.txt")
+quit()
 #in terminal
 $ grep '0\.8*' filename.R2adj.txt > filename.R2adj_InLD.txt
 $ awk '{print $8}' <filename.R2adj_InLD.txt >filename.R2adj_InLDlist.txt
@@ -43,7 +43,10 @@ Workflow for making files:
   Replace: \1\2
 
 Referenced programs:
+
 S. Piry, A. Alapetite, J.-M. Cornuet, D. Paetkau, L. Baudouin, and A. Estoup. 2004. GENECLASS2: A Software for Genetic Assignment and First-Generation Migrant Detection. Journal of Heredity 95(6): 536–539. https://doi.org/10.1093/jhered/esh074
+
 J. K. Pritchard, M. Stephens, and P. Donnelly. 2000. Inference of Population Structure Using Multilocus Genotype Data
 Genetics 155(2): 945-959.
+
 M. Raymond and F. Rousset. 1995. GENEPOP (Version 1.2): Population Genetics Software for Exact Tests and Ecumenicism. Journal of Heredity 86(3): 248–249. https://doi.org/10.1093/oxfordjournals.jhered.a111573
