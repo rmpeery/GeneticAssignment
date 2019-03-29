@@ -9,9 +9,9 @@ $ mv plink.ld filename_plink.ld
 $ tr -s ' ' <filename_plink.ld | tr ' ' ',' > filename.plink.ld.csv
 $ awk -F "," '{$1=""; print $0}' <filename.plink.ld.csv >filename.R2.csv
 #in R
-> R
-> setwd("/path")
-> r2 <- read.csv("filename.R2.csv", header = T, sep = " ")
+R
+setwd("/path")
+r2 <- read.csv("filename.R2.csv", header = T, sep = " ")
 #adds the adjusted p values to the table r2
 > padj <- p.adjust(r2$R2, method = "fdr", n = length(r2$R2))
 > r2$r2p.adj <- padj
