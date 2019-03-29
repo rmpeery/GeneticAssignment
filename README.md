@@ -68,3 +68,5 @@ J. K. Pritchard, M. Stephens, and P. Donnelly. 2000. Inference of Population Str
 Genetics 155(2): 945-959.
 
 M. Raymond and F. Rousset. 1995. GENEPOP (Version 1.2): Population Genetics Software for Exact Tests and Ecumenicism. Journal of Heredity 86(3): 248–249. https://doi.org/10.1093/oxfordjournals.jhered.a111573
+
+PLINK - http://zzz.bwh.harvard.edu/plink/
