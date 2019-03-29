@@ -39,7 +39,9 @@ $ sort -u filename.R2adj_InLDlist.txt > filename.probesInLDlist.txt
 Workflow for making files:
 1. Make lists using a brute forceshell – makeLists.sh
   Example:
+  
   $ head -n 101 subsetsRandomizedLists.txt > 100LociRandomizedList.txt
+  
   $ awk '{print $1}' 100LociRandomizedList.txt > subset1_100lociList.list
 2. loopSepSNPfiles_mac.pl
 3. loop_addHeader.pl
